@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: url(./images/bg.jpg) center / cover no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
