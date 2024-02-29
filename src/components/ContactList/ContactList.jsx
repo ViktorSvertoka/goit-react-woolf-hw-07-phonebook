@@ -12,7 +12,10 @@ const ContactList = () => {
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <ul className="divide-y divide-gray-100">
         {contacts.map(contact => (
-          <li className="flex justify-between gap-x-6 py-5" key={contact.id}>
+          <li
+            className="flex justify-between items-center gap-x-6 py-5"
+            key={contact.id}
+          >
             {`${contact.name} : ${contact.number}`}
             {
               <button
