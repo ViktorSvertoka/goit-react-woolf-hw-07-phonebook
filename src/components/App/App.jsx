@@ -9,7 +9,7 @@ const App = () => {
   const contacts = useSelector(getContacts);
 
   return (
-    <div className="h-screen bg-homeBg bg-cover bg-center bg-fixed p-5">
+    <div className="h-full bg-homeBg bg-cover bg-center bg-fixed p-5">
       <div className="flex flex-col justify-center">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <BiSolidContact className="mx-auto" size="75" color="#4f46e5" />
