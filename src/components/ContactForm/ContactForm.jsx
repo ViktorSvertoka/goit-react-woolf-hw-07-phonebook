@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useSelector, useDispatch } from 'react-redux';
-import { getVisibleContacts } from '../../redux/selectors';
+import { selectVisibleContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/contactsSlice';
 
 const nameInputId = nanoid();
@@ -12,7 +12,7 @@ const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(getVisibleContacts);
+  const contacts = useSelector(selectVisibleContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
@@ -31,9 +31,7 @@ const ContactForm = () => {
     setNumber('');
   };
 
-  const handleChange = event => {
-    const { name, value } = event.target;
-
+  const handleChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
         setName(value);
@@ -45,6 +43,7 @@ const ContactForm = () => {
         return;
     }
   };
+
   return (
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form className="space-y-6" onSubmit={handleSubmit}>
