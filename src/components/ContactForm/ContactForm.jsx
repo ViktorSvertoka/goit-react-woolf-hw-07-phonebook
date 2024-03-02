@@ -31,7 +31,9 @@ const ContactForm = () => {
     setNumber('');
   };
 
-  const handleChange = ({ target: { name, value } }) => {
+  const handleChange = event => {
+    const { name, value } = event.target;
+
     switch (name) {
       case 'name':
         setName(value);

@@ -7,7 +7,7 @@ import { changeFilter } from '../../redux/filterSlice';
 
 const filterInputId = nanoid();
 
-function Filter() {
+const Filter = () => {
   const value = useSelector(selectFilter);
   const dispatch = useDispatch();
 
@@ -31,6 +31,6 @@ function Filter() {
       </label>
     </div>
   );
-}
+};
 
 export default Filter;
