@@ -25,8 +25,15 @@ const ContactForm = () => {
     if (isInContacts) {
       return Notify.warning(`${name} is already in contacts`);
     }
-    dispatch(addContacts({ name, number }));
-    Notify.success(`New contact added`);
+    dispatch(addContacts({ name, number }))
+      .unwrap()
+      .then(() => {
+        Notify.success(`New contact added`);
+      })
+      .catch(() => {
+        Notify.failure(`OOPS...`);
+      });
+
     setName('');
     setNumber('');
   };
