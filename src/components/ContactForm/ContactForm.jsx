@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectVisibleContacts } from '../../redux/selectors';
-import { addContact } from '../../redux/contactsSlice';
+import { addContacts } from '../../redux/operations';
 
 const nameInputId = nanoid();
 const numberInputId = nanoid();
@@ -23,10 +23,10 @@ const ContactForm = () => {
     );
 
     if (isInContacts) {
-      return Notify.info(`${name} is already in contacts`);
+      return Notify.warning(`${name} is already in contacts`);
     }
-
-    dispatch(addContact({ name, number }));
+    dispatch(addContacts({ name, number }));
+    Notify.success(`New contact added`);
     setName('');
     setNumber('');
   };
