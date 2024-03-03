@@ -120,7 +120,7 @@ const ContactItem = ({ contact }) => {
             value={newNumber}
             onChange={handleNumberChange}
             pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
-            title="Phone number format could be: +1 555 1234567 or 555 1234567."
+            title="Phone number must be at least 10 digits long or follow the format +380931112233 or +38 093 333 4455."
             required
           />
         </div>
